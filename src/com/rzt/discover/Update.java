@@ -17,8 +17,12 @@ public class Update {
     public static void main(String[] args) throws Exception
     {
     	HashMap<String,DCXRecord> recs = new HashMap<String,DCXRecord>();
-    	String filePath = "/Data/discover/update0319.csv";
-    	String outFilePath = "/Data/discover/updateOut";
+    	/*--------Ajay's----------*/
+    	String filePath = "/Users/ajayhn/Documents/Data/Discover/update0319.csv";
+    	String outFilePath = "/Users/ajayhn/Documents/Data/Discover/updateOut";
+    	/*--------Nandu's----------*/
+    	//String filePath = "/Data/discover/update0319.csv";
+    	//String outFilePath = "/Data/discover/updateOut";
     	ArrayList<String> arr = FileUtils.getContentsAsList(new File(filePath));
     	ArrayList<List<String>> data  = new ArrayList<List<String>>();
     	List<String> headers = CSVParse.parseLine(arr.get(0));
@@ -31,7 +35,7 @@ public class Update {
     		{
     			String key = l.get(1);
     			Integer k = Integer.parseInt(key.trim());
-    			if (k <= PERCENTILES[5])						// CHANGE THIS TO DO ANALYSIS...
+    			if (k <= PERCENTILES[1])						// CHANGE THIS TO DO ANALYSIS...
     			{
 	    			DCXRecord rec = recs.get(key);
 	    			if (rec == null) {rec = new DCXRecord(); recs.put(key, rec);}
